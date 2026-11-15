@@ -1,0 +1,44 @@
+:root{--g:#2e7d32;--gd:#1b5e20;--gl:#e8f5e9;--bg:#f3f8f4;--t:#1c2b1f;--m:#5c6b60;--r:#c62828;--o:#ef6c00;--b:#1565c0}
+*{box-sizing:border-box;margin:0}
+body{font:16px/1.45 system-ui,Roboto,sans-serif;background:var(--bg);color:var(--t);padding-top:56px;-webkit-tap-highlight-color:transparent}
+header{position:fixed;top:0;left:0;right:0;height:56px;background:var(--g);color:#fff;display:flex;align-items:center;gap:8px;padding:0 8px;z-index:20}
+header h1{flex:1;font-size:1.15rem}
+header button{background:none;border:0;color:#fff;font-size:1.6rem;width:44px;height:44px;border-radius:50%}
+#ov{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;z-index:30}
+#drawer{position:fixed;top:0;bottom:0;left:0;width:min(82vw,310px);background:#fff;z-index:40;transform:translateX(-105%);transition:transform .2s;overflow-y:auto;padding-bottom:20px}
+body.open #drawer{transform:none}body.open #ov{display:block}
+#drawer h2{background:var(--g);color:#fff;font-size:1.2rem;padding:20px 16px}
+#drawer a{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border-bottom:1px solid #eef2ee;cursor:pointer}
+#drawer a.on{background:var(--gl);color:var(--gd);font-weight:600}
+#drawer a i{font-style:normal;background:var(--gl);color:var(--gd);border-radius:12px;padding:1px 9px;font-size:.85rem}
+main{max-width:760px;margin:0 auto;padding:14px 14px 90px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.stat{background:#fff;border-radius:16px;padding:14px;box-shadow:0 1px 4px rgba(0,0,0,.08);cursor:pointer}
+.stat b{display:block;font-size:1.8rem;color:var(--g)}.stat span{color:var(--m);font-size:.9rem}
+.stat.late b{color:var(--r)}.stat.today b{color:var(--o)}.stat.soon b{color:var(--b)}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+input,select,textarea{font:inherit;padding:10px 12px;border:1.5px solid #c8d6ca;border-radius:12px;background:#fff;color:var(--t);width:100%}
+.bar input{flex:1 1 100%}.bar select{flex:1 1 0;min-width:0}
+.card{background:#fff;border-radius:16px;padding:14px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-left:6px solid var(--g)}
+.card.late{border-color:var(--r)}.card.today{border-color:var(--o)}.card.soon{border-color:var(--b)}.card.done{border-color:#9e9e9e}.card.cancelled{border-color:#bdbdbd;opacity:.8}
+.top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}.top b{font-size:1.05rem}
+.b{font-size:.75rem;padding:2px 9px;border-radius:10px;white-space:nowrap;background:var(--gl);color:var(--gd)}
+.b.late{background:#ffebee;color:var(--r)}.b.today{background:#fff3e0;color:var(--o)}.b.soon{background:#e3f2fd;color:var(--b)}.b.done,.b.cancelled{background:#eee;color:#555}
+.meta{display:flex;flex-wrap:wrap;gap:4px 12px;color:var(--m);font-size:.88rem;margin:6px 0}
+.p0{color:var(--r);font-weight:600}.p2{color:#6d8c70}
+.note{background:var(--bg);border-radius:10px;padding:8px 10px;font-size:.9rem;margin:6px 0}
+.btns{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+button.s{border:1.5px solid #c8d6ca;background:#fff;color:var(--t);border-radius:20px;padding:8px 14px;font:inherit;font-size:.9rem;min-height:40px}
+button.s.pri{background:var(--g);border-color:var(--g);color:#fff}button.s.dng{color:var(--r);border-color:#f0c4c4}
+.empty{text-align:center;color:var(--m);padding:40px 10px}
+form label{display:block;font-weight:600;margin:12px 0 4px;font-size:.92rem}
+.row{display:flex;gap:8px}.hide{display:none}
+h3{margin:16px 0 8px}p.h{color:var(--m);font-size:.9rem;margin:4px 0 10px}
+#toast{position:fixed;left:12px;right:12px;bottom:calc(14px + env(safe-area-inset-bottom));max-width:560px;margin:auto;background:#263238;color:#fff;border-radius:14px;padding:10px 14px;display:none;align-items:center;justify-content:space-between;gap:10px;z-index:50}
+#toast button{background:none;border:0;color:#a5d6a7;font:inherit;font-weight:700;padding:8px}
+#toast.show{display:flex}
+.stat.span2{grid-column:span 2}
+.note{white-space:pre-wrap;overflow-wrap:anywhere}
+.top b{overflow-wrap:anywhere}
+#drawer a{user-select:none}
+.gap{margin-top:20px}
